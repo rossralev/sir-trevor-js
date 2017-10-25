@@ -67,6 +67,10 @@ Object.assign(BlockReorder.prototype, require('./function-bind'), require('./ren
   },
 
   onDragStart: function(ev) {
+    
+    // Prapare the block for Dragging 
+    EventBus.trigger("block:reorder:dragprepare");
+    
     var block = this.block;
 
     this.dragEl = block.cloneNode(true);
